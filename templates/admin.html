@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+</head>
+
+<style>
+
+</style>
+
+<body style="  background-image: linear-gradient(to bottom right, red, blue);background-repeat: no-repeat;width:100%;height:630px;">
+    
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<center>
+<h1 style="color:white;"><u>Admin Panel</u></h1>
+    <img src="https://student.nitcregistration.com/Login/images/nitc_logo.png">
+	<br><br>
+
+    <select name="Role">
+        <option value="f">Faculty</option>
+        <option value="s">Students</option>
+        <option value="o">Others</option>
+    </select>
+    <input type="text" name="Name" placeholder="Name">
+    <input type="file" name="myFile">
+    <button type="submit">Upload</button>
+    </center>
+</form>
+</body>
+</html>

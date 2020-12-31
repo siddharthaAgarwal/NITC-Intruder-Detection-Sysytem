@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Recognition for Institute</title>
+
+</head>
+<body style="  background-image: linear-gradient(to bottom right, red, blue);background-repeat: no-repeat;width:100%;">
+    <div style="text-align: center">
+        <img style="margin: auto;" src="{% url 'webcam' %}"/>
+    </div>
+    <iframe id="iframe" width="100%" height="200px" src="{% url 'data' %}"></iframe>
+    <script>
+        window.setInterval(function() {
+            reloadIFrame()
+        }, 2000);
+
+        function reloadIFrame() {
+            console.log('reloading..');
+            document.getElementById('iframe').contentWindow.location.reload();
+        }
+    </script>
+</body>
+
+</html>
